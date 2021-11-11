@@ -37,7 +37,7 @@ const clockText = () =>{
         month = date.getMonth(),
         year = date.getFullYear()
 
-    // We change the hours from 24 to 12 hours and establish whether it is AM or PM
+    // AM >> PM
     if(hh >= 12){
         hh = hh - 12
         ampm = 'PM'
@@ -45,16 +45,16 @@ const clockText = () =>{
         ampm = 'AM'
     }
 
-    // We detect when it's 0 AM and transform to 12 AM
+    // 0 AM = 12 AM
     if(hh == 0){hh = 12}
 
-    // Show a zero before hours
+    // 0:(hours)
     if(hh < 10){hh = `0${hh}`}
 
-    // Show time
+    // Time
     textHour.innerHTML = `${hh}:`
     
-    // Show a zero before the minutes
+    // 0:(minutes)
     if(mm < 10){mm = `0${mm}`}
     
     // minutes
